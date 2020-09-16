@@ -1,0 +1,48 @@
+{
+  "name": "usy_support_metamodelgeneratorg01",
+  "version": "0.2.0",
+  "description": "",
+  "license": "License Commercial",
+  "spec": "nodejs-lib; uu_appg01@1.7.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiridudekusy/usy_support_metamodelgeneratorg01"
+  },
+  "dependencies": {
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.1.0"
+  },
+  "devDependencies": {
+    "uu_appg01_devkit": "^1.5.2"
+  },
+  "engines": {
+    "node": ">=10.16.0"
+  },
+  "scripts": {
+    "clean": "uu_appg01_devkit clean",
+    "test": "uu_appg01_devkit test",
+    "build": "uu_appg01_devkit build",
+    "package": "uu_appg01_devkit package",
+    "dist": "uu_appg01_devkit package",
+    "deploy": "uu_appg01_devkit deploy",
+    "undeploy": "uu_appg01_devkit undeploy",
+    "start": "uu_appg01_devkit start",
+    "prettify": "uu_appg01_devkit prettify",
+    "vulnerabilityScan": "uu_appg01_devkit vulnerabilityScan"
+  },
+  "main": "cli.js",
+  "files": [
+    "app",
+    "env",
+    "public"
+  ],
+  "prettier": {
+    "printWidth": 120
+  },
+  "bin": {
+    "metamodel-generatorg01": "./cli.js"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  }
+}

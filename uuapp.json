@@ -1,0 +1,15 @@
+{
+  "product": "usy_support_metamodelgeneratorg01",
+  "version": "0.2.0",
+  "license": "License Commercial",
+  "description": {
+    "en": "",
+    "cs": ""
+  },
+  "usy_support_metamodelgeneratorg01": {
+    "devkit": {
+      "development": {
+      }
+    }
+  }
+}
