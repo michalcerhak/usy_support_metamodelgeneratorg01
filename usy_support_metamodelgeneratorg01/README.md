@@ -22,7 +22,9 @@ Read help : `metamodel-generatorg01 --help`
 2. Fill required information into generated metamodel.
    - code, name, desc   
    - defaultPermissionMatrix
-3. Your metamodel is ready.
+3. Update metamodel from profile.json (to reflect filled code)
+   `metamodel-generatorg01 -p profiles.json -m metamodel-1.0.json`   
+4. Your metamodel is ready.
 
 ## Update command profiles
 1. Updates existing metamodel from profile.json
@@ -35,6 +37,9 @@ Read help : `metamodel-generatorg01 --help`
 
 
 # Changelog
+## 0.2.1
+- fix documentation chapter **First generation**
+
 ## 0.2.0
 - generate metamodel schemaVersion 1.0.0
 - update metamodel schemaVersion 1.0.0 and 0.1.0
