@@ -44,7 +44,7 @@ class SupportMetamodelgeneratorAbl {
       dtoIn.mandatoryProfiles.forEach(p => res.profileList.push({code: p, name: p, desc: p, disableImplicitPermissions: false, enabledExplicitTypeList: ["uu-businessterritory-maing01/uuRoleGroupIfc"]}));
       profileList.forEach(p => {
         if (dtoIn.mandatoryProfiles.indexOf(p) < 0) {
-          res.profileList.push({code: p, name: p, desc: p})
+          res.profileList.push({code: p, name: p, desc: p, disableImplicitPermissions: false, enabledExplicitTypeList: ["uu-businessterritory-maing01/uuRoleGroupIfc"]})
         }
       });
     }

@@ -2,7 +2,7 @@ This tool generates and updates metamodel for uuBt. It has been tested only with
 
 # Features
 - generate metamodel schemaVersion 1.0.0 from profiles.json
-- update existing metamodel schemaVersion 1.0.0 or 0.1.0 from profiles.json, it odes not change anything else than useCaseProfileMap section
+- update existing metamodel schemaVersion 1.0.0
 
 # How to install and update ?
 
@@ -37,6 +37,10 @@ Read help : `metamodel-generatorg01 --help`
 
 
 # Changelog
+## 0.2.2
+- add `disableImplicitPermissions` and `enabledExplicitTypeList` to all profiles during first generation
+- remove support for schemaVersion 0.1.0
+
 ## 0.2.1
 - fix documentation chapter **First generation**
 
