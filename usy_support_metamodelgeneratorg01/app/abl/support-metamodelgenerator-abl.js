@@ -1,8 +1,7 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
-const MANDATORY_PROFILES = ["Authorities", "Executives", "Auditors"];
-const IGNORED_PROFILES = ["AwidOwner", "Public"];
+const IGNORED_PROFILES = ["AwidOwner", "Public", "AwidLicenseOwner"];
 
 class SupportMetamodelgeneratorAbl {
 
@@ -41,10 +40,12 @@ class SupportMetamodelgeneratorAbl {
       res.defaultPermissionMatrix = existingMetamodel.defaultPermissionMatrix;
     } else {
       res.profileList = [];
-      dtoIn.mandatoryProfiles.forEach(p => res.profileList.push({code: p, name: p, desc: p, disableImplicitPermissions: false, enabledExplicitTypeList: ["uu-businessterritory-maing01/uuRoleGroupIfc"]}));
+      dtoIn.mandatoryProfiles.forEach(p => res.profileList.push(
+        {code: p, name: p, desc: p, disableImplicitPermissions: false, enabledExplicitTypeList: ["uu-businessterritory-maing01/uuRoleGroupIfc"]}));
       profileList.forEach(p => {
         if (dtoIn.mandatoryProfiles.indexOf(p) < 0) {
-          res.profileList.push({code: p, name: p, desc: p, disableImplicitPermissions: false, enabledExplicitTypeList: ["uu-businessterritory-maing01/uuRoleGroupIfc"]})
+          res.profileList.push(
+            {code: p, name: p, desc: p, disableImplicitPermissions: false, enabledExplicitTypeList: ["uu-businessterritory-maing01/uuRoleGroupIfc"]})
         }
       });
     }
@@ -54,11 +55,9 @@ class SupportMetamodelgeneratorAbl {
 
     Object.keys(profilesUcMap).forEach(uc => {
       let ucProfiles = profilesUcMap[uc];
-      if(!ucProfiles.sysStateList || ucProfiles.sysStateList.includes("active")) {
-        let profiles = ucProfiles.profileList || ucProfiles;
-        let key = res.schemaVersion == "0.1.0"?uc:`${res.code}/${uc}`;
-        res.useCaseProfileMap[key] = this._getProfilesMatrix(profiles, profilesIndex)
-      }
+      let profiles = ucProfiles.profileList || ucProfiles;
+      let key = res.schemaVersion == "0.1.0" ? uc : `${res.code}/${uc}`;
+      res.useCaseProfileMap[key] = this._getProfilesMatrix(profiles, profilesIndex)
     });
 
     fs.writeFileSync(dtoIn.metamodel, JSON.stringify(res, null, 2))

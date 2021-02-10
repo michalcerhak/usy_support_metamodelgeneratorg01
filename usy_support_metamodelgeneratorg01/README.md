@@ -37,6 +37,10 @@ Read help : `metamodel-generatorg01 --help`
 
 
 # Changelog
+
+## 0.2.3
+- add support for uuAppServer 5.x
+
 ## 0.2.2
 - add `disableImplicitPermissions` and `enabledExplicitTypeList` to all profiles during first generation
 - remove support for schemaVersion 0.1.0
